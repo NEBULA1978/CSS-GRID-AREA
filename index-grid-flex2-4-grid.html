@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "head"
+                "menu"
+                "main"
+                "foot";
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .item-1 {
+            grid-area: head;
+            background: blue;
+            text-align: center;
+            position: relative;
+        }
+
+        .item-2 {
+            grid-area: menu;
+            background: red;
+            text-align: center;
+            position: relative;
+        }
+
+        .item-3 {
+            grid-area: main;
+            background: green;
+            text-align: center;
+            position: relative;
+        }
+
+        .item-4 {
+            grid-area: foot;
+            background: orange;
+            text-align: center;
+            position: relative;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        h1, h2, p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text-above-image {
+            text-align: center;
+        }
+
+        .image-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .text-inside-image,
+        .text-inside-bottom-left,
+        .text-inside-bottom-right,
+        .text-inside-top-left,
+        .text-inside-top-right {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            font-size: 0.8rem;
+        }
+
+        .text-inside-image {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .text-inside-bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        .text-inside-bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        .text-inside-top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .text-inside-top-right {
+            top: 0;
+            right: 0;
+        }
+
+        @media screen and (min-width: 768px) {
+            .container {
+                grid-template-areas: 
+                    "head head"
+                    "menu main"
+                    "foot foot";
+                grid-template-columns: 1fr 1fr;
+            }
+
+            h1, h2, p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .container {
+                grid-template-areas: 
+                    "head head head"
+                    "menu main foot";
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">
+            <div class="content">
+                <h1>Head Area</h1>
+                <div class="text-above-image">Texto por encima de la imagen</div>
+                <div class="image-container">
+                    <img src="./img/news1.jpg" alt="Image 1">
+                    <div class="text-inside-image">Texto dentro de la imagen</div>
+                    <div class="text-inside-top-left">Texto arriba a la izquierda</div>
+                    <div class="text-inside-top-right">Texto arriba a la derecha</div>
+                    <div class="text-inside-bottom-left">Texto abajo a la izquierda</div>
+                    <div class="text-inside-bottom-right">Texto abajo a la derecha</div>
+                </div>
+            </div>
+        </div>
+        <div class="item item-2">
+            <div class="content">
+                <h2>Menu Area</h2>
+                <div class="image-container">
+                    <img src="./img/news2.jpg" alt="Image 2">
+                    <div class="text-inside-bottom-left">Texto abajo a la izquierda</div>
+                    <div class="text-inside-bottom-right">Texto abajo a la derecha</div>
+                    <div class="text-inside-top-left">Texto arriba a la izquierda</div>
+                    <div class="text-inside-top-right">Texto arriba a la derecha</div>
+                </div>
+                <p>Some menu options here</p>
+            </div>
+        </div>
+        <div class="item item-3">
+            <div class="content">
+                <h2>Main Content Area</h2>
+                <div class="image-container">
+                    <img src="./img/news3.jpg" alt="Image 3">
+                    <div class="text-inside-bottom-left">Texto abajo a la izquierda</div>
+                    <div class="text-inside-bottom-right">Texto abajo a la derecha</div>
+                    <div class="text-inside-top-left">Texto arriba a la izquierda</div>
+                    <div class="text-inside-top-right">Texto arriba a la derecha</div>
+                </div>
+                <p>Main content goes here</p>
+            </div>
+        </div>
+        <div class="item item-4">
+            <div class="content">
+                <h2>Footer Area</h2>
+                <div class "image-container">
+                    <img src="./img/news4.jpg" alt="Image 4">
+                    <div class="text-inside-bottom-left">Texto abajo a la izquierda</div>
+                    <div class="text-inside-bottom-right">Texto abajo a la derecha</div>
+                    <div class="text-inside-top-left">Texto arriba a la izquierda</div>
+                    <div class="text-inside-top-right">Texto arriba a la derecha</div>
+                </div>
+                <p>Footer content here</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
