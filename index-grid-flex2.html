@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas: "head"
+                                "menu"
+                                "main"
+                                "foot";
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .item-1 {
+            grid-area: head;
+            background: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-2 {
+            grid-area: menu;
+            background: red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-3 {
+            grid-area: main;
+            background: green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-4 {
+            grid-area: foot;
+            background: orange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        h1, h2, p {
+            font-size: 1.2rem; /* Utilizamos rem para el tamaño de fuente responsive */
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media screen and (min-width: 768px) {
+            /* Estilos específicos para pantallas más grandes */
+            .container {
+                grid-template-areas: "head head"
+                                    "menu main"
+                                    "foot foot";
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 240px 250px 200px;
+            }
+
+            .item-2, .item-3 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">
+            <div class="content">
+                <h1>Head Area</h1>
+                <img src="./img/news1.jpg" alt="Image 1">
+            </div>
+        </div>
+        <div class="item item-2">
+            <div class="content">
+                <h2>Menu Area</h2>
+                <img src="./img/news2.jpg" alt="Image 2">
+                <p>Some menu options here</p>
+            </div>
+        </div>
+        <div class="item item-3">
+            <div class="content">
+                <h2>Main Content Area</h2>
+                <img src="./img/news3.jpg" alt="Image 3">
+                <p>Main content goes here</p>
+            </div>
+        </div>
+        <div class="item item-4">
+            <div class="content">
+                <h2>Footer Area</h2>
+                <img src="./img/news4.jpg" alt="Image 4">
+                <p>Footer content here</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 1</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header"
+                "nav"
+                "main"
+                "aside"
+                "footer";
+            grid-template-rows: 100px 75px 300px 200px 100px;
+        }
+
+        .header { grid-area: header; background: blue; }
+        .nav { grid-area: nav; background: red; }
+        .main { grid-area: main; background: green; }
+        .aside { grid-area: aside; background: orange; }
+        .footer { grid-area: footer; background: purple; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="nav">Nav</div>
+        <div class="main">Main Content</div>
+        <div class="aside">Aside</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
